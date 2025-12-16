@@ -27,11 +27,7 @@ header {
 }
 
 main {
-    background-image: url('./img/banana leclerc.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+
     display: grid;
     place-items: center;
     background: #76776677;
