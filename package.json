@@ -1,0 +1,36 @@
+{
+  "name": "express-simple-template",
+  "version": "0.0.1",
+  "description": "En mal for småtroll i IT-klassen. BRUK DENNE SMÅTROLL!!!",
+  "main": "dist/app.js",
+  "scripts": {
+    "build:backend": "tsc -p tsconfig.backend.json",
+    "build:frontend": "tsc -p tsconfig.frontend.json",
+    "build": "npm run build:frontend && npm run build:backend",
+    "dev:backend": "tsc -p tsconfig.backend.json -w",
+    "dev:frontend": "tsc -p tsconfig.frontend.json -w",
+    "serve": "nodemon --watch dist dist/app.js",
+    "prestart": "npm run build",
+    "start": "concurrently -k -n BE,FE,SRV -c auto \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HOP-IT-og-ITM/node-express-simple-template.git"
+  },
+  "author": "Egil 'ChatGPT' Dahle",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/HOP-IT-og-ITM/node-express-simple-template/issues"
+  },
+  "homepage": "https://github.com/HOP-IT-og-ITM/node-express-simple-template#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
